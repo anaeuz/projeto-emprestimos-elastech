@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f3f5f8;
+    color: #1f2933;
+}
+
+.topo {
+    background: #1e3a5f;
+    color: #fff;
+    padding: 20px 32px 0;
+}
+
+.topo h1 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.abas {
+    display: flex;
+    gap: 4px;
+}
+
+.aba {
+    background: transparent;
+    border: none;
+    color: #c9d6e6;
+    padding: 10px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+}
+
+.aba:hover {
+    color: #fff;
+}
+
+.aba.ativa {
+    background: #f3f5f8;
+    color: #1e3a5f;
+    font-weight: 600;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 32px 48px;
+}
+
+.painel {
+    display: grid;
+    gap: 20px;
+}
+
+.cartao {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: 0 1px 3px rgba(15, 30, 50, 0.08);
+}
+
+.cartao h2 {
+    margin: 0 0 16px;
+    font-size: 17px;
+}
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-end;
+}
+
+.formulario label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: #52606d;
+    flex: 1 1 200px;
+}
+
+input, select {
+    font: inherit;
+    padding: 9px 10px;
+    border: 1px solid #cbd2d9;
+    border-radius: 6px;
+    background: #fff;
+    color: #1f2933;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #3b82c4;
+    border-color: transparent;
+}
+
+.acoes-form {
+    display: flex;
+    gap: 8px;
+}
+
+.botao {
+    font: inherit;
+    font-size: 14px;
+    padding: 9px 16px;
+    border-radius: 6px;
+    border: 1px solid #cbd2d9;
+    background: #fff;
+    color: #1f2933;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: #f0f3f7;
+}
+
+.botao.principal {
+    background: #1e3a5f;
+    border-color: #1e3a5f;
+    color: #fff;
+}
+
+.botao.principal:hover {
+    background: #2a4d7a;
+}
+
+.botao.perigo {
+    color: #b42318;
+    border-color: #f1b5ae;
+}
+
+.botao.perigo:hover {
+    background: #fdecea;
+}
+
+.botao.pequeno {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.cabecalho-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.cabecalho-lista h2 {
+    margin: 0;
+}
+
+.filtros {
+    display: flex;
+    gap: 8px;
+}
+
+.caixa {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th {
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #7b8794;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e4e7eb;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+td.acoes {
+    text-align: right;
+    white-space: nowrap;
+}
+
+td.acoes .botao {
+    margin-left: 6px;
+}
+
+td.vazio {
+    text-align: center;
+    color: #9aa5b1;
+    padding: 24px;
+}
+
+.selo {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.selo.verde {
+    background: #e3f6ea;
+    color: #1d7a46;
+}
+
+.selo.amarelo {
+    background: #fff4d6;
+    color: #8a5a00;
+}
+
+.selo.vermelho {
+    background: #fdecea;
+    color: #b42318;
+}
+
+.selo.cinza {
+    background: #eef1f4;
+    color: #52606d;
+}
+
+.dica {
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: #7b8794;
+}
+
+.aviso {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 380px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(15, 30, 50, 0.18);
+    z-index: 10;
+}
+
+.aviso.sucesso {
+    background: #1d7a46;
+    color: #fff;
+}
+
+.aviso.erro {
+    background: #b42318;
+    color: #fff;
+}
+
+.escondido {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .topo, main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}

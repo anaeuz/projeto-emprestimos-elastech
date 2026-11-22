@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empréstimo de Equipamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+    <h1>Empréstimo de Equipamentos</h1>
+    <nav class="abas">
+        <button class="aba ativa" data-aba="equipamentos">Equipamentos</button>
+        <button class="aba" data-aba="colaboradores">Colaboradores</button>
+        <button class="aba" data-aba="emprestimos">Empréstimos</button>
+    </nav>
+</header>
+
+<div id="aviso" class="aviso escondido"></div>
+
+<main>
+    <section id="equipamentos" class="painel">
+        <div class="cartao">
+            <h2 id="titulo-form-equipamento">Novo equipamento</h2>
+            <form id="form-equipamento" class="formulario">
+                <input type="hidden" id="equipamento-id">
+                <label>Patrimônio
+                    <input id="equipamento-patrimonio" required placeholder="NB-001">
+                </label>
+                <label>Nome
+                    <input id="equipamento-nome" required placeholder="Notebook Dell">
+                </label>
+                <label>Tipo
+                    <select id="equipamento-tipo" required></select>
+                </label>
+                <div class="acoes-form">
+                    <button type="submit" class="botao principal" id="botao-salvar-equipamento">Cadastrar</button>
+                    <button type="button" class="botao escondido" id="botao-cancelar-equipamento">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="cartao">
+            <div class="cabecalho-lista">
+                <h2>Equipamentos</h2>
+                <div class="filtros">
+                    <select id="filtro-tipo">
+                        <option value="">Todos os tipos</option>
+                    </select>
+                    <select id="filtro-disponivel">
+                        <option value="">Todos</option>
+                        <option value="true">Disponíveis</option>
+                        <option value="false">Emprestados</option>
+                    </select>
+                </div>
+            </div>
+            <table>
+                <thead>
+                <tr><th>Id</th><th>Patrimônio</th><th>Nome</th><th>Tipo</th><th>Situação</th><th></th></tr>
+                </thead>
+                <tbody id="lista-equipamentos"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="colaboradores" class="painel escondido">
+        <div class="cartao">
+            <h2>Novo colaborador</h2>
+            <form id="form-colaborador" class="formulario">
+                <label>Nome
+                    <input id="colaborador-nome" required placeholder="Ana Souza">
+                </label>
+                <label>E-mail
+                    <input id="colaborador-email" type="email" required placeholder="ana@empresa.com">
+                </label>
+                <label>Cargo
+                    <input id="colaborador-cargo" placeholder="Analista">
+                </label>
+                <div class="acoes-form">
+                    <button type="submit" class="botao principal">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="cartao">
+            <h2>Colaboradores</h2>
+            <table>
+                <thead>
+                <tr><th>Id</th><th>Nome</th><th>E-mail</th><th>Cargo</th><th></th></tr>
+                </thead>
+                <tbody id="lista-colaboradores"></tbody>
+            </table>
+        </div>
+
+        <div class="cartao escondido" id="cartao-historico">
+            <div class="cabecalho-lista">
+                <h2 id="titulo-historico">Histórico</h2>
+                <button class="botao" id="botao-fechar-historico">Fechar</button>
+            </div>
+            <table>
+                <thead>
+                <tr><th>Id</th><th>Equipamento</th><th>Emprestado em</th><th>Devolução prevista</th><th>Devolvido em</th><th>Situação</th></tr>
+                </thead>
+                <tbody id="lista-historico"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="emprestimos" class="painel escondido">
+        <div class="cartao">
+            <h2>Novo empréstimo</h2>
+            <form id="form-emprestimo" class="formulario">
+                <label>Equipamento disponível
+                    <select id="emprestimo-equipamento" required></select>
+                </label>
+                <label>Colaborador
+                    <select id="emprestimo-colaborador" required></select>
+                </label>
+                <div class="acoes-form">
+                    <button type="submit" class="botao principal">Emprestar</button>
+                </div>
+            </form>
+            <p class="dica">A devolução prevista é calculada pelo sistema: 14 dias a partir de hoje.</p>
+        </div>
+
+        <div class="cartao">
+            <div class="cabecalho-lista">
+                <h2>Empréstimos</h2>
+                <label class="caixa">
+                    <input type="checkbox" id="filtro-atrasados"> Só os atrasados
+                </label>
+            </div>
+            <table>
+                <thead>
+                <tr><th>Id</th><th>Equipamento</th><th>Colaborador</th><th>Emprestado em</th><th>Devolução prevista</th><th>Devolvido em</th><th>Situação</th><th></th></tr>
+                </thead>
+                <tbody id="lista-emprestimos"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
